@@ -82,3 +82,25 @@
 .legend-text.gray {
     color: #A9A9A9;
 }
+
+.show-right-bar-enter {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.show-right-bar-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: .3s;
+}
+
+.show-right-bar-exit {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.show-right-bar-exit-active {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: .3s;
+}

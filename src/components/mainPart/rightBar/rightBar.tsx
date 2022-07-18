@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Calendar from "react-calendar";
 import { ObjectType } from "typescript";
 import './calendar.css';
+import { RequestForm } from "./form/requestForm";
 import { Legend } from "./legend";
 import './rightBar.css';
 import { TimeSelector } from "./timeSelector/timeSelector";
@@ -43,14 +44,20 @@ export const RightBar:React.FC<TProps> = React.memo((props) => {
         setCurrentView(
             <TimeSelector 
                 date={`${day} ${months[month as keyof typeof months].toLowerCase()}`}
-                onClickTime={(time) => onClickTime(time)}
+                onClickTime={(date, time) => onClickTime(date, time)}
             />
         )
         console.log(day, months[month as keyof typeof months].toLowerCase())
     }
 
-    function onClickTime(time: string) {
-
+    function onClickTime(date: string, time: string) {
+        setTitle('Оформление заявки');
+        setCurrentView(
+            <RequestForm 
+                dateInfo={`${date}, ${time}`}
+            />
+        )
+        console.log(date, time)
     }
 
     return <div className="right-bar-container">

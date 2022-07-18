@@ -4,10 +4,14 @@ import './timeSelector.css';
 
 type TProps = {
     date: string
-    onClickTime: (time: string) => void
+    onClickTime: (date: string, time: string) => void
 }
 
 export const TimeSelector:React.FC<TProps> = React.memo((props) => {
+    function onClickTime(value: string) {
+        props.onClickTime(props.date, value)
+    }
+
     return <div className="time-selector-container">
         <span className="time-selector-date">{props.date}</span>
         <div className="time-selector-rows">
@@ -20,6 +24,7 @@ export const TimeSelector:React.FC<TProps> = React.memo((props) => {
                         {time: '9:30', active: true},
                         {time: '10:00', active: false},                        
                     ]}
+                    onClick={(time) => onClickTime(time)}
                 />
                 <RowTime 
                     times={[                        
@@ -27,6 +32,7 @@ export const TimeSelector:React.FC<TProps> = React.memo((props) => {
                         {time: '11:00', active: true},
                         {time: '11:30', active: false}
                     ]}
+                    onClick={(time) => onClickTime(time)}
                 />
             </div>
             <div className="time-selector-row">
@@ -38,6 +44,7 @@ export const TimeSelector:React.FC<TProps> = React.memo((props) => {
                         {time: '13:30', active: true},
                         {time: '14:00', active: false},                       
                     ]}
+                    onClick={(time) => onClickTime(time)}
                 />
                 <RowTime 
                     times={[                       
@@ -47,12 +54,14 @@ export const TimeSelector:React.FC<TProps> = React.memo((props) => {
                         {time: '16:00', active: false},
                         {time: '16:30', active: false},                        
                     ]}
+                    onClick={(time) => onClickTime(time)}
                 />
                 <RowTime 
                     times={[                        
                         {time: '17:00', active: false},
                         {time: '17:30', active: false}
                     ]}
+                    onClick={(time) => onClickTime(time)}
                 />
             </div>
             <div className="time-selector-row">
@@ -63,6 +72,7 @@ export const TimeSelector:React.FC<TProps> = React.memo((props) => {
                         {time: '19:00', active: false},
                         {time: '19:30', active: true}                    
                     ]}
+                    onClick={(time) => onClickTime(time)}
                 />
             </div>
         </div>

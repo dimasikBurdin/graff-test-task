@@ -31,6 +31,7 @@ export const Footer:React.FC = React.memo(() => {
         </div>
         <div className="footer-map-container">
             <img className="footer-map-image" src={mapImage} alt="карта, где мы находимся" />
+            <span className="footer-map-marker"></span>
         </div>
     </div>
 })

@@ -43,13 +43,23 @@
   .react-calendar__navigation button {
     min-width: 44px;
     background: none;
+    color: transparent;
+    /* background: url('navigateRightIcon.svg') 50% 50% no-repeat; */
+  }
+  .react-calendar__navigation button:nth-child(1) {
+    background: url('navigateRightIcon.svg') 50% 50% no-repeat;
+    transform: rotate(180deg);
+  }
+  .react-calendar__navigation button:nth-child(3) {
+    background: url('navigateRightIcon.svg') 50% 50% no-repeat;
   }
   .react-calendar__navigation button:disabled {
     background-color: #f0f0f0;
   }
   .react-calendar__navigation button:enabled:hover,
   .react-calendar__navigation button:enabled:focus {
-    background-color: #e6e6e6;
+    /* background-color: #e6e6e6; */
+    opacity: .6;
   }
   .react-calendar__month-view__weekdays {
     text-align: center;

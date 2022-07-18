@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import './mainPart.css';
-import backImage from './mainImage.svg';
 import whiteLogo from './logoWhiteIcon.svg';
-import Calendar from "react-calendar";
-import './rightBar/calendar.css';
+import { CSSTransition } from "react-transition-group";
+import { RightBar } from "./rightBar/rightBar";
+
 
 export const MainPart:React.FC = React.memo(() => {
+    const [showRightBar, setShowRightBar] = useState(false);
 
     function onClickEntry() {
+        setShowRightBar(true);
+    }
 
+    function closeRightBar() {
+        setShowRightBar(false);
     }
 
     return <div className="main-part-container">
@@ -26,13 +31,17 @@ export const MainPart:React.FC = React.memo(() => {
             </div>
             <button className="main-part-info-button" onClick={() => onClickEntry()}>Записаться на просмотр</button>
         </div>
-        <Calendar 
-            showNeighboringMonth={false}
-            showDoubleView={false}
-            next2Label={null}
-            prev2Label={null}
-            tileDisabled={(a) => a.date.getDate() === 23}
-            minDate={new Date()}
-        />
+        
+        <CSSTransition 
+            in={showRightBar}
+            timeout={300}
+            classNames='show-right-bar'
+            unmountOnExit
+        >
+            <RightBar 
+                closeRightBar={closeRightBar}
+            />
+        </CSSTransition>
+        
     </div>
 })

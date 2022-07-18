@@ -1,0 +1,84 @@
+.right-bar-container {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 30%;
+    background: #FFFFFF;
+    padding: 50px 40px 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-bar-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 56px;
+}
+
+.right-bar-title {
+    font-weight: 600;
+    font-size: 24px;
+    color: #333333;
+}
+
+.right-bar-close-button {
+    border: none;
+    width: 17px;
+    height: 17px;
+    background: url('closeIcon.svg') 50% 50% no-repeat;
+    background-size: 100%;
+}
+
+.right-bar-close-button:hover {
+    opacity: .7;
+}
+
+.right-bar-content-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 34px;
+}
+
+.right-bar-legend-container {
+    display: flex;
+    align-self: flex-start;
+    gap: 32px;
+}
+
+.legend-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.legend-circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50px;
+}
+
+.legend-circle.black {
+    background-color: black;
+}
+
+.legend-circle.gray {
+    background-color: #A9A9A9;
+}
+
+.legend-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+}
+
+.legend-text.black {
+    color: #333333;
+}
+
+.legend-text.gray {
+    color: #A9A9A9;
+}

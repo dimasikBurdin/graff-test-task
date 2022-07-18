@@ -1,0 +1,61 @@
+.time-selector-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 26px
+}
+
+.time-selector-date {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 110%;
+}
+
+.time-selector-rows {
+    display: flex;
+    flex-direction: column;
+}
+
+.time-selector-row {
+    width: 100%;
+    
+}
+
+.row-time-container {
+    display: flex;
+    max-width: 100%;
+    /* flex-wrap: wrap; */
+    gap: 8px;
+}
+
+.row-item {
+    padding: 5px 8px;
+    /* padding: .7em; */
+    width: 68px;
+    height: 40px;
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 400;
+    font-size: 22px;
+    /* line-height: 130%; */
+    flex-shrink: 4;
+    background: #FAFAFA;
+
+}
+
+.row-item:hover {
+    background: #E9E9E9;
+    cursor: pointer;
+}
+
+.row-item.disabled {
+    background-color: white;
+    color: #A9A9A9;
+}
+
+.row-item.disabled:hover {
+    cursor: default;
+}

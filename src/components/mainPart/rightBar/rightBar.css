@@ -2,12 +2,12 @@
     position: absolute;
     right: 0;
     height: 100%;
-    width: 30%;
+    width: 40%;
     background: #FFFFFF;
     padding: 50px 40px 0 40px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .right-bar-header {
@@ -38,8 +38,8 @@
 .right-bar-content-container {
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
     margin-bottom: 34px;
 }
 

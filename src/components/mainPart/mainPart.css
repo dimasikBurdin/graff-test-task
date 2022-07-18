@@ -1,0 +1,24 @@
+.main-part-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.main-part-image {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background: url('mainImage.svg') 50% 50% no-repeat;
+    background-size: 100% auto;
+    transform: scale(-1,1);
+}
+
+.main-part-logo {
+    position: fixed;
+    top: 55px;
+    left: 180px;
+    width: 156px;
+    height: 76px;
+}

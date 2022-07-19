@@ -42,7 +42,7 @@ export const RightBar:React.FC<TProps> = React.memo((props) => {
     );
 
     useEffect(() => {
-        console.log(title, currentView)
+        // console.log(title, currentView)
         let newHistory = {
             title: title,
             value: currentView
@@ -66,7 +66,7 @@ export const RightBar:React.FC<TProps> = React.memo((props) => {
         )
 
         
-        console.log(day, months[month as keyof typeof months].toLowerCase())
+        // console.log(day, months[month as keyof typeof months].toLowerCase())
     }
 
     function onClickTime(date: string, time: string) {
@@ -95,7 +95,7 @@ export const RightBar:React.FC<TProps> = React.memo((props) => {
         setTitle(lastElement.title);
         setCurrentView(lastElement.value);
         history.current.splice(temp.length-1, 1);
-        console.log(history.current)
+        // console.log(history.current)
         if(history.current.length === 1) {
             setBackButton(<></>)
         }

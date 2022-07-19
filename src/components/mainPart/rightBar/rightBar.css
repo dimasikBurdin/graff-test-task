@@ -1,11 +1,11 @@
 .right-bar-container {
     position: relative;
-    right: 0;
     max-height: 100%;
-    min-width: 32%;
-    max-width: 32%;
+    min-width: 36%;
+    max-width: 36%;
     /* flex: 1; */
     background: #FFFFFF;
+    padding: 50px 40px;
     padding: 50px 40px;
     display: flex;
     flex-direction: column;
@@ -169,4 +169,40 @@
 
 .right-bar-finish-button:hover {
     opacity: .7;
+}
+
+@media screen and (max-width: 1024px) {
+    .right-bar-container {
+        position: relative;
+        max-height: 100%;
+        min-width: 42%;
+        max-width: 42%;
+        /* flex: 1; */
+        background: #FFFFFF;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-left: auto;
+        /* align-items: center; */
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .right-bar-container {
+
+        background: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        position: absolute !important;
+        min-width: none;
+        max-width: none;
+       
+        height: 100%;
+        padding: 50px 20px;
+
+        /* align-items: center; */
+    }
 }

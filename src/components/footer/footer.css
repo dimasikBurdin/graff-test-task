@@ -58,7 +58,7 @@
     position: relative;
     /* flex: 3; */
     /* width: 100%; */
-    width: calc(32% + 80px);
+    width: calc(36% + 80px);
     height: 100%;
 }
 
@@ -75,4 +75,14 @@
     background-size: 100% 100%;
     top: 50%;
     left: 50%;
+}
+
+@media screen and (max-width: 1024px) {
+    .footer-map-container {
+        position: relative;
+        /* flex: 3; */
+        /* width: 100%; */
+        width: calc(42% + 40px);
+        height: 100%;
+    }
 }

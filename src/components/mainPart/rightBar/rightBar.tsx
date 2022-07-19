@@ -55,9 +55,30 @@ export const RightBar:React.FC<TProps> = React.memo((props) => {
         setCurrentView(
             <RequestForm 
                 dateInfo={`${date}, ${time}`}
+                onSubmit={onSubmitRequest}
             />
         )
         console.log(date, time)
+    }
+
+    function onSubmitRequest() {
+        setTitle('')
+    }
+
+    function toMain() {
+        props.closeRightBar();
+    }
+
+    if(!title) {
+        return <div className="right-bar-finish-container">
+            <span className="right-bar-finish-title">
+                Просмотр запланирован
+            </span>
+            <span className="right-bar-finish-description">
+                Дополнительная информация будет отправлена на указанный почтовый адрес или номер телефона.
+            </span>
+            <button className="right-bar-finish-button" onClick={() => toMain()}>На главную</button>
+        </div>
     }
 
     return <div className="right-bar-container">

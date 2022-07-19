@@ -7,6 +7,7 @@ import { MuiTelInput } from "mui-tel-input";
 
 type TProps = {
     dateInfo: string
+    onSubmit: () => void
 }
 
 type IFormInput = {
@@ -20,6 +21,7 @@ export const RequestForm:React.FC<TProps> = React.memo((props) => {
 
     function onSubmit(data: IFormInput) { 
         console.log(data)
+        props.onSubmit()
     }
 
     return <div className="request-form-container">

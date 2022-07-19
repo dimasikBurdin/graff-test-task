@@ -111,3 +111,43 @@
     transform: translateX(100%);
     transition: .3s;
 }
+
+.right-bar-finish-container {
+    position: relative;
+    right: 0;
+    max-height: 100%;
+    min-width: 32%;
+    max-width: 32%;
+    background: #FFFFFF;
+    padding: 150px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.right-bar-finish-title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 110%;
+}
+
+.right-bar-finish-description {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+}
+
+.right-bar-finish-button {
+    width: 60%;
+    height: 60px;
+    border: none;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 21px;
+    background: #333333;
+}
+
+.right-bar-finish-button:hover {
+    opacity: .7;
+}

@@ -67,10 +67,15 @@ export const RightBar:React.FC<TProps> = React.memo((props) => {
         </div>
         <div className="right-bar-content-container">
             {currentView}
-        </div>        
-        <div className="right-bar-legend-container">
-            <Legend active={true} />
-            <Legend active={false} />
         </div>
+        {
+            title !== 'Оформление заявки'
+            ? <div className="right-bar-legend-container">
+                <Legend active={true} />
+                <Legend active={false} />
+            </div>
+            : null
+        }
+        
     </div>
 })

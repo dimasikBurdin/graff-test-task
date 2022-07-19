@@ -1,31 +1,74 @@
-import React from "react";
+import React, { useState } from "react";
 import './requestForm.css';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
+import { Box, FormControl, FormHelperText, Input, TextField, useFormControl } from "@mui/material";
+import { MuiTelInput } from "mui-tel-input";
+
 
 type TProps = {
     dateInfo: string
 }
 
+type IFormInput = {
+    phone: string
+    email: string
+    firstName: string
+}
+
 export const RequestForm:React.FC<TProps> = React.memo((props) => {
-    const {register, handleSubmit, watch, formState: {errors} } = useForm();
+    const {control, handleSubmit} = useForm<IFormInput>();
 
-    function onSubmit() {
-
+    function onSubmit(data: IFormInput) { 
+        console.log(data)
     }
 
     return <div className="request-form-container">
-        {props.dateInfo}
+        <span className="request-form-date">
+            {props.dateInfo}
+        </span>     
         <form className="request-form" onSubmit={handleSubmit(onSubmit)}>
-            <input {...register("phone", {required: true})} placeholder="Номер телефона"/>
-            {errors.phone && <span>Заполни</span>}
-            <input {...register("email", { required: true })} placeholder="Email" />
-            {errors.email && <span>Заполни</span>}
-            <input {...register("name", { required: true })} placeholder="Ваше имя" />
-            {errors.name && <span>Заполни</span>}
-            {/* errors will return when field validation fails  */}
-            {errors.exampleRequired && <span>This field is required</span>}
-            
-            <input type="submit" value={'Записаться на просмотр'}/>
+            <Controller
+                name="phone"
+                control={control}
+                defaultValue=''                
+                render={({ field }) => 
+                <MuiTelInput 
+                    {...field} 
+                    required
+                    size="medium"
+                    label='Номер телефона'
+                />
+                }
+            />
+            <Controller
+                name="email"
+                control={control}
+                defaultValue=''
+                render={({ field }) => 
+                    <TextField
+                        {...field} 
+                        size="medium"
+                        label='E-mail'
+                        required
+                        type={"email"}
+                    />
+                }
+            />
+            <Controller
+                name="firstName"
+                control={control}
+                defaultValue=''
+                render={({ field }) => 
+                    <TextField
+                        {...field} 
+                        size="medium"
+                        label='Ваше имя'
+                        required
+                        type={'text'}
+                    />
+                }
+            />
+            <input className="request-form-submit-button" type="submit" value={'Записаться на просмотр'}/>
         </form>
     </div>
 })

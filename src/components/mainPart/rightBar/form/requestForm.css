@@ -1,9 +1,34 @@
 .request-form-container {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    gap: 24px;
+    height: 100%;
+}
+
+.request-form-date {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 110%;
 }
 
 .request-form {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    gap: 30px;
+
+    height: 100%;
+}
+
+.request-form-submit-button {
+    width: 100%;
+    height: 60px;
+    border: none;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 21px;
+    background: #333333;
+    margin-top: auto;
 }

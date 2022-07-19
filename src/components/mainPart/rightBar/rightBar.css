@@ -1,10 +1,11 @@
 .right-bar-container {
-    position: absolute;
+    position: relative;
     right: 0;
-    height: 100%;
+    max-height: 100%;
     width: 40%;
+    flex: 1;
     background: #FFFFFF;
-    padding: 50px 40px 0 40px;
+    padding: 50px 40px;
     display: flex;
     flex-direction: column;
     /* align-items: center; */
@@ -14,7 +15,7 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-    margin-bottom: 56px;
+    /* margin-bottom: 56px; */
 }
 
 .right-bar-title {
@@ -40,7 +41,8 @@
     display: flex;
     /* align-items: center; */
     /* justify-content: center; */
-    margin-bottom: 34px;
+    /* margin-bottom: 34px; */
+    height: 100%;
 }
 
 .right-bar-legend-container {

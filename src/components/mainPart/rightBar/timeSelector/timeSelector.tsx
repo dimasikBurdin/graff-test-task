@@ -17,6 +17,7 @@ export const TimeSelector:React.FC<TProps> = React.memo((props) => {
         <div className="time-selector-rows">
             <div className="time-selector-rows-help">
                 <div className="time-selector-row">
+                    {/* с бэка получать все времена с пометками active, затем просто отображать эти данные */}
                     <RowTime 
                         times={[
                             {time: '8:00', active: true},

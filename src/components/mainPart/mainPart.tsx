@@ -60,6 +60,9 @@ export const MainPart:React.FC = React.memo(() => {
         >
             <RightBar 
                 closeRightBar={closeRightBar}
+                //можно с бэка получать массив дат в полном формате (число месяц год) и также передавать
+                //для примера сделал просто массивом чисел
+                disableDays={[1,6,13,23,30]}
             />
         </CSSTransition>
         

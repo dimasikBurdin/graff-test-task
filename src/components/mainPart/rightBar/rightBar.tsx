@@ -9,6 +9,7 @@ import { TimeSelector } from "./timeSelector/timeSelector";
 
 type TProps = {
     closeRightBar: () => void
+    disableDays: Array<number>
 }
 
 export const RightBar:React.FC<TProps> = React.memo((props) => {
@@ -35,7 +36,9 @@ export const RightBar:React.FC<TProps> = React.memo((props) => {
             showDoubleView={false}
             next2Label={null}
             prev2Label={null}
-            tileDisabled={(a) => a.date.getDate() === 23}
+            tileDisabled={(a) => {
+                    return props.disableDays.includes(a.date.getDate())
+            }}
             minDate={new Date()}
             onClickDay={(e) => onClickDay(e.getDate(), e.getMonth())}
         />
@@ -132,7 +135,5 @@ export const RightBar:React.FC<TProps> = React.memo((props) => {
             : null
         }
         </div>
-        
-        
     </div>
 })

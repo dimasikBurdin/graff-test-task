@@ -27,6 +27,7 @@ export const RightBar:React.FC<TProps> = React.memo((props) => {
         11: 'Декабря'
     }
     const [title, setTitle] = useState<string>('Выбор даты');
+    const [backButton, setBackButton] = useState<JSX.Element>(<></>);
     const [currentView, setCurrentView] = useState<JSX.Element>(
         <Calendar 
             showNeighboringMonth={false}
@@ -40,6 +41,9 @@ export const RightBar:React.FC<TProps> = React.memo((props) => {
     );
 
     function onClickDay(day: number, month: number) {
+        setBackButton(
+            <button className="right-bar-back-button"></button>
+        )
         setTitle('Выбор времени');
         setCurrentView(
             <TimeSelector 
@@ -83,7 +87,10 @@ export const RightBar:React.FC<TProps> = React.memo((props) => {
 
     return <div className="right-bar-container">
         <div className="right-bar-header">
-            <span className="right-bar-title">{title}</span>
+            <div className="right-bar-left-part">
+                {backButton}
+                <span className="right-bar-title">{title}</span>
+            </div>            
             <button className="right-bar-close-button" onClick={() => props.closeRightBar()}></button>
         </div>
         <div className="right-bar-content-container">

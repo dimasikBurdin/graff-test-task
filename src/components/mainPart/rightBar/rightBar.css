@@ -22,6 +22,20 @@
     /* margin-bottom: 56px; */
 }
 
+.right-bar-left-part {
+    display: flex;
+    gap: 34px;
+    align-items: center;
+}
+
+.right-bar-back-button {
+    border: none;
+    width: 20px;
+    height: 20px;
+    background: url('backButtonIcon.svg') 50% 50% no-repeat;
+    background-size: 100%;
+}
+
 .right-bar-title {
     font-weight: 600;
     font-size: 24px;

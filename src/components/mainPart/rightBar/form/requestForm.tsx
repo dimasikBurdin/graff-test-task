@@ -37,6 +37,7 @@ export const RequestForm:React.FC<TProps> = React.memo((props) => {
                     required
                     size="medium"
                     label='Номер телефона'
+                    autoComplete="off"
                 />
                 }
             />
@@ -51,6 +52,7 @@ export const RequestForm:React.FC<TProps> = React.memo((props) => {
                         label='E-mail'
                         required
                         type={"email"}
+                        autoComplete="off"
                     />
                 }
             />
@@ -65,6 +67,7 @@ export const RequestForm:React.FC<TProps> = React.memo((props) => {
                         label='Ваше имя'
                         required
                         type={'text'}
+                        autoComplete="off"
                     />
                 }
             />

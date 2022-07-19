@@ -2,12 +2,14 @@
     position: relative;
     right: 0;
     max-height: 100%;
-    width: 40%;
-    flex: 1;
+    min-width: 32%;
+    max-width: 32%;
+    /* flex: 1; */
     background: #FFFFFF;
     padding: 50px 40px;
     display: flex;
     flex-direction: column;
+    gap: 30px;
     /* align-items: center; */
 }
 
@@ -15,6 +17,7 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
     /* margin-bottom: 56px; */
 }
 
@@ -39,6 +42,8 @@
 .right-bar-content-container {
     width: 100%;
     display: flex;
+    flex-direction: column;
+    gap: 10px;
     /* align-items: center; */
     /* justify-content: center; */
     /* margin-bottom: 34px; */

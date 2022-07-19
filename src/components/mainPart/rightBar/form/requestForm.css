@@ -31,6 +31,7 @@
     line-height: 21px;
     background: #333333;
     margin-top: auto;
+    cursor: pointer;
 }
 
 .request-form-submit-button:hover {

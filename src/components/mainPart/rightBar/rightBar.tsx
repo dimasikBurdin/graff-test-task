@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Calendar from "react-calendar";
 import { ObjectType } from "typescript";
 import './calendar.css';
@@ -28,6 +28,7 @@ export const RightBar:React.FC<TProps> = React.memo((props) => {
     }
     const [title, setTitle] = useState<string>('Выбор даты');
     const [backButton, setBackButton] = useState<JSX.Element>(<></>);
+    const history = useRef<Array<{title: string, value: JSX.Element}>>(new Array());
     const [currentView, setCurrentView] = useState<JSX.Element>(
         <Calendar 
             showNeighboringMonth={false}
@@ -40,9 +41,21 @@ export const RightBar:React.FC<TProps> = React.memo((props) => {
         />
     );
 
+    useEffect(() => {
+        console.log(title, currentView)
+        let newHistory = {
+            title: title,
+            value: currentView
+        }
+        if(history.current[history.current.length-1]?.title !== newHistory.title) {
+            history.current.push(newHistory)
+        }
+        
+    }, [title, currentView]);
+
     function onClickDay(day: number, month: number) {
         setBackButton(
-            <button className="right-bar-back-button"></button>
+            <button className="right-bar-back-button" onClick={() => toPrev()}></button>
         )
         setTitle('Выбор времени');
         setCurrentView(
@@ -51,6 +64,8 @@ export const RightBar:React.FC<TProps> = React.memo((props) => {
                 onClickTime={(date, time) => onClickTime(date, time)}
             />
         )
+
+        
         console.log(day, months[month as keyof typeof months].toLowerCase())
     }
 
@@ -71,6 +86,19 @@ export const RightBar:React.FC<TProps> = React.memo((props) => {
 
     function toMain() {
         props.closeRightBar();
+    }
+
+    function toPrev() {
+        console.log(history)
+        let temp = [...history.current];
+        let lastElement = temp[temp.length-2];
+        setTitle(lastElement.title);
+        setCurrentView(lastElement.value);
+        history.current.splice(temp.length-1, 1);
+        console.log(history.current)
+        if(history.current.length === 1) {
+            setBackButton(<></>)
+        }
     }
 
     if(!title) {

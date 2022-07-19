@@ -7,9 +7,9 @@ import markerIcon from '../markerIcon.svg';
 
 export const Map:React.FC = React.memo(() => {
   const position = new LatLng(56.838424, 60.603423);
-    return <MapContainer center={position} zoom={13} scrollWheelZoom={true}>      
+    return <MapContainer center={position} zoom={15} scrollWheelZoom={true}>      
     <TileLayer    
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      url='https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png'
     />
     <Marker 
       position={position} 

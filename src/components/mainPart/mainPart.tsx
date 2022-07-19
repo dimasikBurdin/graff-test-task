@@ -7,13 +7,24 @@ import { RightBar } from "./rightBar/rightBar";
 
 export const MainPart:React.FC = React.memo(() => {
     const [showRightBar, setShowRightBar] = useState(false);
+    const [showBackGray, setShowBackGray] = useState(false);
 
     function onClickEntry() {
+        enableBackgroundGray();
         setShowRightBar(true);
     }
 
     function closeRightBar() {
+        disableBackgroundGray();
         setShowRightBar(false);
+    }
+
+    function enableBackgroundGray() {
+        setShowBackGray(true);
+    }
+
+    function disableBackgroundGray() {
+        setShowBackGray(false);
     }
 
     return <div className="main-part-container">
@@ -31,6 +42,15 @@ export const MainPart:React.FC = React.memo(() => {
             </div>
             <button className="main-part-info-button" onClick={() => onClickEntry()}>Записаться на просмотр</button>
         </div>
+
+        <CSSTransition
+            in={showBackGray}
+            timeout={300}
+            classNames='show-back-gray'
+            unmountOnExit
+        >
+            <div className="main-part-background-gray"></div>
+        </CSSTransition>
         
         <CSSTransition 
             in={showRightBar}

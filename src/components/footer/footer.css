@@ -56,8 +56,9 @@
 
 .footer-map-container {
     position: relative;
-    flex: 3;
-    width: 100%;
+    /* flex: 3; */
+    /* width: 100%; */
+    width: calc(32% + 80px);
     height: 100%;
 }
 

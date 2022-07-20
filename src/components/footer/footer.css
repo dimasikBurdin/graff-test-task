@@ -85,7 +85,7 @@
     left: 50%;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1280px) {
     .footer-map-container {
         position: relative;
         /* flex: 3; */

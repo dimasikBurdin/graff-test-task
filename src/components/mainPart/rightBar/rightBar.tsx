@@ -32,16 +32,20 @@ export const RightBar:React.FC<TProps> = React.memo((props) => {
     const history = useRef<Array<{title: string, value: JSX.Element}>>(new Array());
     const [currentView, setCurrentView] = useState<JSX.Element>(
         <Calendar 
-            showNeighboringMonth={false}
+            // showNeighboringMonth={false}
             showDoubleView={false}
             next2Label={null}
             prev2Label={null}
+            view={"month"}
+            maxDetail={"month"}
+            minDetail={"month"}
             tileDisabled={(a) => {
                     return props.disableDays.includes(a.date.getDate())
             }}
             minDate={new Date()}
             onClickDay={(e) => onClickDay(e.getDate(), e.getMonth())}
         />
+        
     );
 
     useEffect(() => {

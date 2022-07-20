@@ -186,25 +186,20 @@
 
 @media screen and (max-width: 1280px) {
     .right-bar-container {
-        position: relative;
         max-height: 100%;
-        /* min-width: 42%;
-        max-width: 42%; */
         width: 492px;
 
-        /* flex: 1; */
         background: #FFFFFF;
         padding: 40px 20px;
         display: flex;
         flex-direction: column;
         gap: 30px;
         margin-left: auto;
-        /* align-items: center; */
     }
 
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
     .right-bar-container {
         position: absolute;
         min-width: none;

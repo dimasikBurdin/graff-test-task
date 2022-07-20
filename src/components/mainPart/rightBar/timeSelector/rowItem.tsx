@@ -7,12 +7,12 @@ type TProps = {
 }
 
 export const RowItem:React.FC<TProps> = React.memo((props) => {
-    return <span 
+    return <div 
         className={`row-item ${props.active ? '' : 'disabled'}`} 
         onClick={() => {
             if(props.active)
                 props.onClick();            
         }}>
         {props.value}
-    </span>
+    </div>
 })

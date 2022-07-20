@@ -61,8 +61,8 @@
     /* width: 100%; */
     /* width: calc(36% + 80px); */
     width: 40%;
+    width: 620px;
     height: 100%;
-    flex: 3;
 }
 
 .footer-map-map {
@@ -91,7 +91,7 @@
         /* flex: 3; */
         /* width: 100%; */
         /* width: calc(42% + 40px); */
-        width: 42%;
+        width: 492px;
         height: 100%;
     }
 }

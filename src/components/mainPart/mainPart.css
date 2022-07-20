@@ -41,6 +41,7 @@
 .main-part-info-text-title {
     font-weight: 600;
     font-size: 80px;
+    line-height: 100%;
 
     max-width: 900px;
 }
@@ -48,6 +49,7 @@
 .main-part-info-text-descript {
     font-weight: 400;
     font-size: 18px;
+    line-height: 130%;
     max-width: 570px;
 }
 

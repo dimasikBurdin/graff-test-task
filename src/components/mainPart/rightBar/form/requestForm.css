@@ -37,3 +37,31 @@
 .request-form-submit-button:hover {
     opacity: 0.7;
 }
+
+.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated.MuiInputLabel-filled.MuiFormLabel-root.MuiFormLabel-colorPrimary.Mui-required.css-e4w4as-MuiFormLabel-root-MuiInputLabel-root {
+    color: #A9A9A9;
+}
+
+.MuiFilledInput-root.MuiFilledInput-underline.MuiInputBase-root.MuiInputBase-colorPrimary.MuiInputBase-formControl.css-19mk8g1-MuiInputBase-root-MuiFilledInput-root {
+}
+
+.MuiFilledInput-root.MuiFilledInput-underline.MuiInputBase-root.MuiInputBase-colorPrimary.MuiInputBase-formControl.css-19mk8g1-MuiInputBase-root-MuiFilledInput-root::before {
+    border: none;
+}
+
+.MuiFilledInput-root.MuiFilledInput-underline.MuiInputBase-root.MuiInputBase-colorPrimary.MuiInputBase-formControl.css-19mk8g1-MuiInputBase-root-MuiFilledInput-root::after {
+    border: none;
+}
+
+.MuiFilledInput-root.MuiFilledInput-underline.MuiInputBase-root.MuiInputBase-colorPrimary.Mui-focused.MuiInputBase-formControl.css-19mk8g1-MuiInputBase-root-MuiFilledInput-root {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 21px;
+    color: black;
+}
+
+.MuiFilledInput-root.MuiFilledInput-underline.MuiInputBase-root.MuiInputBase-colorPrimary.Mui-focused.MuiInputBase-formControl.css-19mk8g1-MuiInputBase-root-MuiFilledInput-root::before {
+    border: none;
+    text-decoration: none;
+}

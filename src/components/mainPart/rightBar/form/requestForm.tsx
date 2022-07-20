@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import './requestForm.css';
 import { useForm, Controller } from 'react-hook-form';
-import { Box, FormControl, FormHelperText, Input, TextField, useFormControl } from "@mui/material";
+import { Box, createTheme, FormControl, FormHelperText, Input, makeStyles, TextField, ThemeProvider, useFormControl, withStyles } from "@mui/material";
 import { MuiTelInput } from "mui-tel-input";
-
 
 type TProps = {
     dateInfo: string
@@ -16,10 +15,15 @@ type IFormInput = {
     firstName: string
 }
 
-export const RequestForm:React.FC<TProps> = React.memo((props) => {
+export const RequestForm:React.FC<TProps> = React.memo((props) => {    
     const {control, handleSubmit} = useForm<IFormInput>();
+    const [isError, setIsError] = useState(false);
 
     function onSubmit(data: IFormInput) { 
+        if(!(data.email && data.firstName && data.phone)) {
+            setIsError(true);
+            return
+        }
         console.log(data)
         props.onSubmit()
     }
@@ -34,28 +38,37 @@ export const RequestForm:React.FC<TProps> = React.memo((props) => {
                 control={control}
                 defaultValue=''                
                 render={({ field }) => 
-                <MuiTelInput 
-                    {...field} 
-                    required
-                    size="medium"
-                    label='Номер телефона'
-                    autoComplete="off"
-                />
+                    <TextField 
+                        {...field}
+                        // variant={"filled"}
+                        variant={isError && field.value === '' ? 'outlined' : "filled"}
+                        // required
+                        size="medium"
+                        label='Номер телефона'
+                        autoComplete="off"
+                        type={'number'}
+                        error={isError && field.value === ''}
+                        helperText={isError && field.value === '' ? 'Заполните поле' : ''}
+                    />
                 }
             />
             <Controller
                 name="email"
                 control={control}
                 defaultValue=''
-                render={({ field }) => 
-                    <TextField
-                        {...field} 
+                render={({ field }) =>
+                    <TextField                        
+                        {...field}
+                        // variant={"filled"}
+                        variant={isError && field.value === '' ? 'outlined' : "filled"}
                         size="medium"
                         label='E-mail'
-                        required
+                        // required
                         type={"email"}
                         autoComplete="off"
-                    />
+                        error={isError && field.value === ''}
+                        helperText={isError && field.value === '' ? 'Заполните поле' : ''}
+                    />                    
                 }
             />
             <Controller
@@ -65,11 +78,15 @@ export const RequestForm:React.FC<TProps> = React.memo((props) => {
                 render={({ field }) => 
                     <TextField
                         {...field} 
+                        // variant={"filled"}
+                        variant={isError && field.value === '' ? 'outlined' : "filled"}
                         size="medium"
                         label='Ваше имя'
-                        required
+                        // required
                         type={'text'}
                         autoComplete="off"
+                        error={isError && field.value === ''}
+                        helperText={isError && field.value === '' ? 'Заполните поле' : ''}
                     />
                 }
             />

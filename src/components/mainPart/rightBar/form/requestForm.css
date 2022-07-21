@@ -30,7 +30,7 @@
     font-size: 17px;
     line-height: 21px;
     background: #333333;
-    margin-top: auto;
+    /* margin-top: auto; */
     cursor: pointer;
 }
 
@@ -64,4 +64,10 @@
 .MuiFilledInput-root.MuiFilledInput-underline.MuiInputBase-root.MuiInputBase-colorPrimary.Mui-focused.MuiInputBase-formControl.css-19mk8g1-MuiInputBase-root-MuiFilledInput-root::before {
     border: none;
     text-decoration: none;
+}
+
+@media screen and (max-width: 640px) {
+    .request-form-submit-button {        
+        margin-top: auto;
+    }
 }

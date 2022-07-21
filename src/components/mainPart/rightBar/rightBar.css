@@ -28,6 +28,7 @@
     justify-content: space-between;
     align-items: center;
     /* margin-bottom: 56px; */
+    box-sizing: border-box;
 }
 
 .right-bar-left-part {
@@ -224,6 +225,10 @@
         flex-direction: column;
         gap: 25px;
         box-sizing: border-box;
+    }
+
+    .right-bar-header {
+        padding: 0 10px;
     }
 }
 
